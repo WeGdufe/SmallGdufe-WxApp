@@ -1,0 +1,12 @@
+<!--index.wxml-->
+
+<view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+            <block wx:for="{{tips}}" wx:for-item="item" wx:key="*this">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+                    <view class="weui-media-box__desc">{{item.description}}</view>
+                </view>
+              </block>
+            </view>
+        </view>

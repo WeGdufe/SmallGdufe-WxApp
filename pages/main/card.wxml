@@ -1,0 +1,20 @@
+<!--pages/main/card.wxml-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">地点</view>
+    <view class="th">时间</view>
+    <view class="th ">金额</view>
+  </view>
+  <block wx:for="{{dayInfo}}" wx:key="{{*this}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.shop}}</view>
+      <view class="td">{{item.time}}</view>
+      <view class="td">{{item.change}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.shop}}</view>
+      <view class="td">{{item.time}}</view>
+      <view class="td">{{item.change}}</view>
+    </view>
+  </block>
+</view>

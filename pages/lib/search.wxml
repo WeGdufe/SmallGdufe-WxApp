@@ -1,0 +1,42 @@
+<!--pages/lib/search.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="query"/>
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <block class="" wx:for="{{booksInfo}}" wx:key="*this">
+      <view class="weui-cells weui-cells_after-title" id="{{item.macno}}" bindtap="showDetail">
+        <view class="weui-cell weui-cell_input">
+          <view class="">{{item.name + ' ' + item.author}}</view>
+        </view>
+      </view>
+      <view class="weui-cells__tips">
+        <view class="weui-flex">
+          索书号：{{item.serial}}
+        </view>
+        <view class="weui-flex">
+          馆藏量：{{item.numAll}}
+        </view>
+        <view class="weui-flex">
+          可  借：{{item.numCan}}
+        </view>
+        <view class="weui-flex">
+          出版社：{{item.publisher}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

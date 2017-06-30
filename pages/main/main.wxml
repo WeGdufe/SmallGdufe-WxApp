@@ -1,0 +1,44 @@
+<view class="page">
+    <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="name_radius">{{baseInfo.name[0]}}</view>
+                </view>
+                <view class="flex weui-cell__bd">
+                  <view class="weui-flex__item">
+                    <view class="weui-cell" style="padding:5px;">
+                      <view class="weui-cell__bd">{{baseInfo.name}}</view>
+                      <view class="weui-cell__ft">{{baseInfo.sno}}</view>
+                    </view>
+                  </view>
+                  <view class="weui-flex__item">
+                    <view class="weui-cell" style="padding:5px;">
+                      <view class="weui-cell__bd">{{baseInfo.department}}</view>
+                      <view class="weui-cell__ft">{{baseInfo.classroom}}</view>
+                    </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+   <view class="weui-cells weui-cells_after-title">
+            <navigator url="card" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/res/me_card.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">饭卡实时余额</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">￥{{cardInfo.cash}}</view>
+            </navigator>
+            <navigator url="/pages/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/res/me_about.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">关于</view>
+            </navigator>
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="logout">
+                <view class="weui-cell__hd">
+                    <image src="/res/me_exit.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">注销</view>
+            </view>
+        </view>
+</view>
