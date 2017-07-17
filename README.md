@@ -4,7 +4,7 @@
 仅供广财本科生使用
 
 ## 小程序码
-(http://www.wegdufe.com/img/xcx.jpg)
+![Image text](http://www.wegdufe.com/img/xcx.jpg)
 
 # 更新日志
 * 2017.7.14 v1.1.3 改善课表显示并支持更换学期，改善成绩查询显示
