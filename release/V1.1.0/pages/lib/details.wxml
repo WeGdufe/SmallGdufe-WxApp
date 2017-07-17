@@ -1,0 +1,23 @@
+<!--pages/lib/details.wxml-->
+<scroll-view class="page">
+  <block class="" wx:for="{{lists}}" wx:key="*this">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="">{{item.serial}}</view>
+      </view>
+    </view>
+    <view class="weui-cells__tips">
+      <view class="weui-flex">
+        书刊状态：
+        <view style="color:{{item.state == '可借' ? '#16ba00' : ''}};">{{item.state}}</view>
+      </view>
+
+      <view class="weui-flex">
+        馆藏位置：{{item.location}}
+      </view>
+      <view class="weui-flex">
+        条形码：{{item.barId}}
+      </view>
+    </view>
+  </block>
+</scroll-view>

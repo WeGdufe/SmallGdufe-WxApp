@@ -1,0 +1,5 @@
+/* pages/functions/lists.wxss */
+.weui-flex__item{
+  margin-left: 20rpx;
+  color: black;
+}

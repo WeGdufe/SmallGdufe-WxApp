@@ -1,0 +1,51 @@
+<!--pages/jwxt/score.wxml-->
+<view class="page">
+  <!--<view class="weui-cells__title">选择学期</view>-->
+  <view class="section">
+    <picker bindchange="bindTimeChange" value="{{index}}" range="{{time_lists}}">
+      <view class="picker">
+        当前学期(空白为所有成绩)：{{time_lists[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class="">
+    <view class="weui-flex label-title">
+      <view class="label-75">
+        <view>课程名称</view>
+      </view>
+      <view class="label-20">
+        <view>成绩</view>
+      </view>
+    </view>
+  </view>
+  <block class="" wx:for="{{lists}}" wx:for-index="i" wx:key="classCode">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input score-title" bindtap="show" id="id_{{i}}">
+        <view class="label-75">{{item.name}}</view>
+        <view class="label-20" style="color:{{item.score >= 60 ? '#16ba00' : 'red'}};">{{item.score}}</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title light score-more" hidden="{{show[item.id]}}">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-label scorce-list">时间:{{item.time}}</view>
+        <view class=" scorce-list">平时:{{item.dailyScore}}</view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-label scorce-list">编号:{{item.classCode}}</view>
+        <view class="scorce-list">实验:{{item.expScore}}</view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-label scorce-list">学分:{{item.credit}}</view>
+        <view class="scorce-list">期末:{{item.paperScore}}</view>
+      </view>
+    </view>
+  </block>
+  <view class="weui-cells__tips">
+    <view class="weui-flex">
+      平均绩点：
+      <view style="color:#16ba00;">{{GPA ? GPA : ''}}</view>
+    </view>
+    备注：只计算了60分以上的，结果可能不对。
+  </view>
+
+</view>

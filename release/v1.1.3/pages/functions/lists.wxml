@@ -1,0 +1,26 @@
+<!--pages/functions/lists.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">功能</view>
+    <view class="page__desc">教务系统、图书馆、校内服务时间</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{grids}}" wx:for-item='grid' wx:key="*this">
+        <navigator url="{{grid.url}}" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="{{grid.iconPath}}" />
+          <view class="weui-grid__label">{{grid.text}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>
+<modal title="{{notice.title}}" confirm-text="{{notice.confirmText}}" cancel-text="{{notice.cancelText}}" hidden="{{modalHidden}}" bindconfirm="showNotice" bindcancel="showNotice">
+<block wx:for="{{notice.keys}}">
+  <view class="weui-flex">
+    <view class="placeholder">{{notice.keys[index]}}</view>
+    <view class="weui-flex__item">{{notice.values[index]}}</view>
+  </view>
+  <view class="placeholder">{{notice.tips}}</view>
+  </block>
+</modal>

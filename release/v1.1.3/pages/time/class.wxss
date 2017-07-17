@@ -1,0 +1,47 @@
+/* class.wxss */
+
+.top {
+  display: flex;
+  flex-direction: row;
+  margin-left: 100rpx;
+  background-color: #DEDEDE;
+  /*color: #7cba23;*/
+  color: gray;
+}
+
+.top-text {
+  width: 130rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+}
+
+.scroll {
+  height: 1170rpx;
+  z-index: 101;
+  display: flex;
+  position: fixed;
+}
+
+.left {
+  width: 100rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.timeset{
+  width: 200rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: 60rpx;
+  /*border-style: outset;*/
+}

@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/main/main",
+    "pages/login/login",
+    "pages/functions/lists",
+    "pages/functions/sztz",
+    "pages/main/card",
+    "pages/jwxt/score",
+    "pages/about/about",
+    "pages/jwxt/cet",
+    "pages/lib/search",
+    "pages/lib/history",
+    "pages/lib/current",
+    "pages/time/open",
+    "pages/jwxt/schedule",
+    "pages/lib/details",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小广财",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "提醒",
+      "iconPath": "/res/tab_home.png",
+      "selectedIconPath": "/res/tab_home_on.png"
+    },{
+      "pagePath": "pages/functions/lists",
+      "text": "功能",
+      "iconPath": "/res/tab_features.png",
+      "selectedIconPath": "/res/tab_features_on.png"
+    },{
+      "pagePath": "pages/main/main",
+      "text": "主页",
+      "iconPath": "/res/tab_me.png",
+      "selectedIconPath": "/res/tab_me_on.png"
+    }]
+  }
+}

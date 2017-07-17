@@ -1,0 +1,60 @@
+<!--pages/jwxt/schedule.wxml-->
+<view class="top">
+  <view wx:for="{{['一','二','三','四','五','六','日']}}" class="top-text">周{{item}}</view>
+</view>
+<view class="scroll">
+  <view style="height:960rpx;width:730rpx;display:flex;">
+    <view style="background-color:#DEDEDE;color:gray;">
+      <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" class="left">
+        {{item}}
+      </view>
+    </view>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}">
+      <view style="width:750rpx;margin-top:{{(index+1)*80}}rpx;  position: absolute;">
+      </view>
+    </view>
+
+    <!--课表-->
+    <view wx:for="{{wlist}}">
+      <view class="flex-item kcb-item" bindtap="showCardView" data-statu="open" data-index="{{index}}" style="margin-left:{{(item.dayInWeek-1)*100}}rpx;margin-top:{{(item.startSec-1)*80+2}}rpx;height:{{(item.endSec-item.startSec+1)*80-2}}rpx;background-color:{{colorArrays[item.color_index%colorArrays.length]}}">
+        <view class="smalltext">{{item.show+'@'+item.location}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<modal title="" confirm-text="确定" cancel-text="取消" cancel="false" hidden="{{modalHidden}}" bindconfirm="modalChange" bindcancel="modalChange">
+  <view class="weui-flex">
+    <view class="placeholder">课程</view>
+    <view class="weui-flex__item">{{wlist[cur_index].name}}</view>
+  </view>
+  <view class="weui-flex">
+    <view class="placeholder">别名</view>
+    <view class="weui-flex__item">{{wlist[cur_index].show}}</view>
+    <!--<input type="text" class="weui-flex__item" value="{{wlist[cur_index].show}}" bindchange="updshow" />-->
+  </view>
+  <view class="weui-flex">
+    <view class="placeholder">教室</view>
+    <view class="weui-flex__item">{{wlist[cur_index].location}}</view>
+    <!--<input type="text" class="weui-flex__item" value="{{wlist[cur_index].location}}" bindchange="updloc" />-->
+  </view>
+  <view class="weui-flex">
+    <view class="placeholder">老师</view>
+    <view class="weui-flex__item">{{wlist[cur_index].teacher}}</view>
+  </view>
+  <view class="weui-flex">
+    <view class="placeholder">周几</view>
+    <view class="weui-flex__item">{{wlist[cur_index].dayInWeek}}</view>
+  </view>
+  <view class="weui-flex">
+    <view class="placeholder">节数</view>
+    <view class="weui-flex__item">{{wlist[cur_index].startSec + '-' + wlist[cur_index].endSec}}</view>
+  </view>
+  <view class="weui-flex">
+    <view class="placeholder">周数</view>
+    <view class="weui-flex__item">{{wlist[cur_index].period}}</view>
+    <!--<input type="text" class="weui-flex__item" value="{{wlist[cur_index].period}}" bindchange="updper" />-->
+  </view>
+</modal>
+<view class="weui-btn-area weui-flex">
+  <button bindtap="gotoIndex" class="weui-btn weui-flex__item" type="primary" style="margin-top:{{12*80+2}}rpx;">查看我的课表</button>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/functions/sztz.wxml-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">素拓模块</view>
+    <view class="th">所需最少学分</view>
+    <view class="th ">已修学分</view>
+  </view>
+  <block wx:for="{{lists}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.requireScore}}</view>
+      <view class="td">{{item.score}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.requireScore}}</view>
+      <view class="td">{{item.score}}</view>
+    </view>
+  </block>
+</view>

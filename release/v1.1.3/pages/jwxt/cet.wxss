@@ -1,0 +1,12 @@
+/* pages/jwxt/cet.wxss */
+.weui-btn {
+  font-weight: bold;
+  font-size: 30rpx;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2%;
+}
+
+.weui-cells__tips{
+margin-top: 5%;
+}

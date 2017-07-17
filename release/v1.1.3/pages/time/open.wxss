@@ -1,0 +1,36 @@
+/* pages/lib/open.wxss */
+
+.title {
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-top: 1%;
+}
+
+.weui-form-preview__value {
+  text-align: left;
+}
+
+.weui-form-preview__label {
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.text-right {
+  text-align: right;
+  margin-right: 5%;
+}
+
+.weui-form-preview__ft {
+  position: unset;
+  line-height: unset;
+}
+
+.weui-form-preview__hd {
+  padding: unset;
+  position: unset;
+}
+
+.weui-form-preview{
+  margin:20rpx 0;
+}

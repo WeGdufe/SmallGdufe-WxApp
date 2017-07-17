@@ -1,0 +1,34 @@
+/* pages/jwxt/score.wxss */
+.scorce-list {
+  width: 50%;
+}
+.weui-cell {
+  position:static;
+  /*height:35px;*/
+  padding:0;
+  border: 0;
+}
+.light {
+  background-color: #F8F8F8;
+}
+.label-75 {
+  width: 75%;
+  padding-left: 5%;
+  margin:4px 0;
+}
+.label-20 {
+  width: 20%;
+  text-align: center;
+  position:static;
+}
+.label-title{
+  /*border-style: solid;*/
+  border-color:#deecf2;
+  background-color: #f8fdff;
+  color: #399dda;
+}
+.score-more{
+  /*height: 25px;*/
+  /*margin-bottom: 5px;*/
+  /*margin-top: 5px;*/
+}

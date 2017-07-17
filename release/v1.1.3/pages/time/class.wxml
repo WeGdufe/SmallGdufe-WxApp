@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="page__bd">
+
+        <view class="weui-tab__content">
+          <view class="top">
+            <view wx:for="{{['广州','佛山']}}" class="top-text">{{item}}校区</view>
+          </view>
+          <scroll-view scroll-y="true" class="scroll">
+            <view style="height:960rpx;width:730rpx;display:flex;">
+              <view style="background-color:#DEDEDE;color:gray;width:100rpx">
+                <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" class="left">
+                  第{{item}}节
+                </view>
+              </view>
+
+              <!--课表-->
+              <view style="width:200rpx;">
+                <view wx:for="{{['08:00-08:45','08:55-09:40','10:00-10:45','10:55-11:40','14:10-14:55','15:05-15:50','16:10-16:55','17:05-17:50','18:40-19:25','19:35-20:20','20:30-21:15','21:25-22:05']}}" class="timeset">
+                  {{item}}
+                </view>
+              </view>
+
+          <view style="margin-left: 130rpx;width:200rpx;">
+                <view wx:for="{{['08:30-09:15','09:15-10:00','10:20-11:05','11:05-11:50','14:00-14:45','14:45-15:30','15:50-16:35','16:35-17:20','18:30-19:15','19:15-20:00','20:20-21:05','21:05-21:50']}}" class="timeset">
+                  {{item}}
+                </view>
+              </view>
+            </view>
+            <view class="weui-cells__tips">备注：如上述时间有误，请通过"关于"向我们反馈。</view>
+          </scroll-view>
+          
+        </view>
+  </view>
+</view>
