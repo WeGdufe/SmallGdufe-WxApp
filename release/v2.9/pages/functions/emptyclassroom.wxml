@@ -1,0 +1,64 @@
+<view class="page">
+
+  <view class='weui-cells' style='margin-top: 0;'>
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">教学楼</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker value="{{buildIndex}}" bindchange="buildPicker" range="{{build[1]}}">
+          <view class="weui-select weui-select_in-select-after">{{build[1][buildIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_select weui-flex">
+      <view class="weui-flex__item">
+        <button bindtap='weekDown' disabled='{{week <= 1}}'>{{'<'}}</button>
+      </view>
+      <view class="weui-flex__item">
+        <picker value="{{week - 1}}" bindchange="buildWeekPicker" range="{{weeks}}">
+          <view class="" style='text-align: center;'>{{weeks[week-1]}}</view>
+        </picker>
+      </view>
+      <view class="weui-flex__item">
+        <button bindtap='weekUp' disabled='{{week >= 18}}'>{{'>'}}</button>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_select weui-flex">
+      <view class="weui-flex__item">
+        <button bindtap='dayDown'>{{'<'}}</button>
+      </view>
+      <view class="weui-flex__item">
+        <picker value="{{day}}" bindchange="buildDayPicker" range="{{days}}">
+          <view class="" style='text-align: center;'>{{days[day]}}</view>
+        </picker>
+      </view>
+      <view class="weui-flex__item">
+        <button bindtap='dayUp'>{{'>'}}</button>
+      </view>
+    </view>
+    <view class="weui-cells__tips">数据来源于教务系统，仅供参考。部分课室不允许自习需注意一下。</view>
+  </view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th" style='width: 60%;'>教室\节次</view>
+      <view class="th" wx:for="{{['0102','0304','0506','0708','0910','1112']}}" wx:key="{{*this}}">{{item}}</view>
+    </view>
+    <scroll-view scroll-y style="height: 400px;">
+      <block wx:for="{{lists}}" wx:key="{{*this}}">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td" style='width: 60%;'>{{item[0]}}</view>
+          <view class="td" wx:for="{{[0,1,2,3,4,5]}}" wx:for-item="it" wx:key="{{*this}}">
+            <icon type="{{item[6*day+it+1] ? 'success_no_circle' : 'cancel'}}" size="23"></icon>
+          </view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td" style='width: 60%;'>{{item[0]}}</view>
+          <view class="td" wx:for="{{[0,1,2,3,4,5]}}" wx:for-item="it" wx:key="{{*this}}">
+            <icon type="{{item[6*day+it+1] ? 'success_no_circle' : 'cancel'}}" size="23"></icon>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

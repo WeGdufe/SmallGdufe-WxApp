@@ -1,0 +1,31 @@
+/* pages/lib/details.wxss */
+.page__hd {
+  padding: 30rpx 35rpx;
+  text-align: center;
+  background-image: linear-gradient(to top, #96deda 0%, #43b0d1 100%);
+  box-shadow: 0 10rpx 35rpx #dee1e8;
+}
+
+.page__desc {
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+}
+.type{
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius:100%;
+  color:white;
+  font-weight:bold;
+  font-size:25px;
+  text-align:center;
+  vertical-align:middle;
+  background:#4FC0E8;
+}
+.weui-media-box__info {
+  margin-top: unset;
+  padding-bottom: unset;
+  color: unset;
+  line-height: unset;
+}

@@ -1,0 +1,16 @@
+<!--pages/lib/history.wxml-->
+<view class="weui-panel">
+  <view class='weui-panel__hd'>历史借阅[{{booksInfo.length}}]</view>
+  <view class='weui-panel__bd'>
+    <block class="" wx:for="{{booksInfo}}" wx:key="*this">
+      <view id="{{index}}" class="weui-media-box weui-media_text" >
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__title"> {{(index+1) + '.' + item.name + '/' + item.author}}</view>
+          <view class="weui-media-box__desc">借书日期： {{item.borrowedTime}}</view>
+          <view class="weui-media-box__desc">还书日期： {{item.returnTime}}</view>
+          <view class="weui-media-box__desc">馆藏地点： {{item.location}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

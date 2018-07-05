@@ -1,0 +1,34 @@
+<!--pages/login/login.wxml-->
+<view class="page">
+  <view hidden='{{finished}}'>
+    <view class="weui-cells__tips">
+      <view>注意：</view>
+      <view>1.全课程好评；</view>
+      <view>2.需要差评的你可以先点击“只保存不提交”，然后再到教务系统上改；</view>
+      <view>3.提交了之后不能再进行评教，请谨慎三思。</view>
+      <view>4.务必自行上系统确认是否已经评教成功。</view>
+      <view>5.如果没反应，请联系开发人员。</view>
+      <view>6.禁止广泛传播（如发到群里或者朋友圈）。</view>
+    </view>
+    <view class="weui-cells weui-cells_after-title" hidden='{{finished}}'>
+      <button class="weui-btn" type="primary" bindtap="submit">一键评教并提交</button>
+      <button class="weui-btn" bindtap="save">一键评教只保存不提交</button>
+    </view>
+  </view>
+  <view hidden='{{!finished}}'>
+    <view class="weui-cells__tips">
+      <view>评教结果：</view>
+      <view wx:for="{{logs}}">
+        <view>{{item}}</view>
+      </view>
+      <view> </view>
+      <ad unit-id="adunit-302f4386d11e12ec"></ad>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <button class="weui-btn" type="primary" bindtap="home">回首页</button>
+    </view>
+  </view>
+  <!-- <view class='weui-cells__tips' hidden='{{!finished}}'>
+    <ad unit-id="adunit-302f4386d11e12ec"></ad>
+  </view> -->
+</view>

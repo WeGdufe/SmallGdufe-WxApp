@@ -1,0 +1,25 @@
+<!--pages/lib/open.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <block class="" wx:for="{{lists}}" wx:for-item="list" wx:key="*this">
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__item">
+            <view class="title">{{list.title}}</view>
+          </view>
+        </view>
+        <view class="weui-form-preview__bd">
+          <block class="" wx:for="{{list.key}}" wx:key="*this" wx:for-index="i">
+            <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">{{list.key[i]}}</view>
+              <view class="weui-form-preview__value">{{list.value[i]}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view class="weui-cells__tips">
+      备注：如上述时间有误，欢迎及时向我们反馈，您的支持是我维护的动力。
+    </view>
+  </view>
+</view>

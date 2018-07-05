@@ -1,0 +1,285 @@
+/* pages/main/main.wxss */
+
+/*@import '../../weui.wxss';*/
+
+.name_radius {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #3e3e3e;
+  align-items: center;
+  text-align: center;
+  font-size: 75rpx;
+  color: white; 
+  margin:0 12px 0 0;
+  overflow:unset;
+}
+
+.weui-flex__item {
+  font-size: 35rpx;
+}
+
+.weui-cell__ft {
+  font-size: 32rpx;
+}
+
+.weui-cell__bd {
+  font-size: 32rpx;
+}
+
+.picker {
+  content: " ";
+  border-top: 1rpx solid #d9d9d9;
+}
+.weui-grid2 {
+  position:static;
+  float:left;
+  /* padding:20px 10px; */
+  width:20%;
+  box-sizing:border-box;
+  border-right:1rpx solid #d9d9d9;
+  border-bottom:1rpx solid #d9d9d9;
+
+}
+.weui-grid__icon2 {
+  display:block;
+  width:28px;
+  height:28px;
+  margin:0 auto;
+}
+.weui-grid__label2 {
+  margin-top:0px;
+  display:block;
+  text-align:center;
+  color:#000;
+  font-size:10px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+.icon_list {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+  .icon_item_demo {
+    width: 20%;
+    float: left;
+    margin-bottom: 10rpx;
+  }
+  .icon_type {
+    display: block;
+    font-size: 22rpx;
+  }
+  @font-face {
+    font-family: 'min-icon';
+    src: url('https://s10.mogucdn.com/mlcdn/c45406/170928_1h5992g4hi7giefg93h9ffjfdh98e.ttf') format('truetype');
+  }
+  .icon {
+    display: inline;
+    font-family: "min-icon" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2rpx;
+  }
+
+  .icon--no:before {
+    content: "\e695";
+  }
+
+  .icon--warning:before {
+    content: "\e634";
+  }
+
+  .icon--add:before {
+    content: "\e604";
+  }
+
+  .icon--close:before {
+    content: "\e624";
+  }
+
+  .icon--star:before {
+    content: "\e625";
+  }
+
+  .icon--more:before {
+    content: "\e633";
+  }
+
+  .icon--search:before {
+    content: "\e626";
+  }
+
+  .icon--share:before {
+    content: "\e627";
+  }
+
+  .icon--arrow-left:before {
+    content: "\e602";
+  }
+
+  .icon--arrow-right:before {
+    content: "\e603";
+  }
+
+  .icon--arrow-up:before {
+    content: "\e628";
+  }
+
+  .icon--arrow-down:before {
+    content: "\e629";
+  }
+
+  .icon--right:before {
+    content: "\e62a";
+  }
+
+  .icon--check:before {
+    content: "\e63f";
+  }
+
+  .icon--minus:before {
+    content: "\e62e";
+  }
+
+  .icon--cart:before {
+    content: "\e641";
+  }
+
+  .icon--home:before {
+    content: "\e642";
+  }
+
+  .icon--star-active:before {
+    content: "\e630";
+  }
+
+  .icon--search-square:before {
+    content: "\e646";
+  }
+
+  .icon--camera:before {
+    content: "\e601";
+  }
+
+  .icon--scan:before {
+    content: "\e62b";
+  }
+
+  .icon--corcer-l:before {
+    content: "\e62c";
+  }
+
+  .icon--corcer-r:before {
+    content: "\e62d";
+  }
+
+  .icon--alipay:before {
+    content: "\e62f";
+  }
+
+  .icon--yen:before {
+    content: "\e632";
+  }
+
+  .icon--mogujie:before {
+    content: "\e631";
+  }
+
+  .icon--group:before {
+    content: "\e64e";
+  }
+
+  .icon--help:before {
+    content: "\e64f";
+  }
+
+  .icon--notice:before {
+    content: "\e650";
+  }
+
+  .icon--yes:before {
+    content: "\e652";
+  }
+
+  .icon--shop:before {
+    content: "\e651";
+  }
+
+  .icon--delete:before {
+    content: "\e653";
+  }
+
+  .icon--comment:before {
+    content: "\e654";
+  }
+
+  .icon--edit:before {
+    content: "\e621";
+  }
+
+  .icon--feedback:before {
+    content: "\e60e";
+  }
+
+  .icon--location:before {
+    content: "\e60f";
+  }
+
+  .icon--address:before {
+    content: "\e610";
+  }
+
+  .icon--after-sales:before {
+    content: "\e612";
+  }
+
+  .icon--pintuan:before {
+    content: "\e613";
+  }
+
+  .icon--weixin:before {
+    content: "\e614";
+  }
+
+  .icon--footprint:before {
+    content: "\e616";
+  }
+
+  .icon--top:before {
+    content: "\e618";
+  }
+
+  .icon--purse:before {
+    content: "\e619";
+  }
+
+  .icon--unreceived:before {
+    content: "\e61a";
+  }
+
+  .icon--truck:before {
+    content: "\e61b";
+  }
+
+  .icon--rate:before {
+    content: "\e61c";
+  }
+
+  .icon--coupon:before {
+    content: "\e61d";
+  }
+
+  .icon--message:before {
+    content: "\e61e";
+  }
+  button {
+    position:static;
+    display:block;
+    line-height:unset;
+    background-color: unset;
+  }
+  button::after {
+    content: none;
+  }

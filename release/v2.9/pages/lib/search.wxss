@@ -1,0 +1,19 @@
+/* pages/lib/search.wxss */
+.type{
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius:100%;
+  color:white;
+  font-weight:bold;
+  font-size:25px;
+  text-align:center;
+  vertical-align:middle;
+  background:#4FC0E8;
+}
+.weui-media-box__info {
+  margin-top: unset;
+  padding-bottom: unset;
+  color: unset;
+  line-height: unset;
+}

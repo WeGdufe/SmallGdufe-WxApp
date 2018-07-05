@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="section weui-flex">
+      <button bindtap='showPopup' style='position: unset; padding-left: 0;'>
+      菜单
+        <!-- <view class="zan-icon zan-icon-wap-nav" style="color: #000;"></view> -->
+      </button>
+
+      <view class="weui-flex__item">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker" style="font-size: 40rpx; text-align:center;">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+
+    </view>
+    <view>
+      <view class="top">
+        <view wx:for="{{['一','二','三','四','五','六','日']}}" class="top-text" wx:key="*this">周{{item}}</view>
+      </view>
+
+      <view style="height:960rpx;width:730rpx;display:flex;">
+        <view style="background-color:#DEDEDE;color:gray;">
+          <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" class="left" wx:key="*this">
+            {{item}}
+          </view>
+        </view>
+        
+        <!--课表-->
+        <view wx:for="{{wlist}}" wx:key="*this" wx:for-index="index2">
+          <view class="flex-item kcb-item" bindtap="showCardView" data-statu="open" data-index="{{index2}}" style="display:{{item.weeks[index] === true ? 'flex' : 'none'}};margin-left:{{(item.dayInWeek-1)*100+2}}rpx;margin-right:-2rpx;margin-top:{{(item.startSec-1)*80+2}}rpx;height:{{(item.endSec-item.startSec+1)*80-2}}rpx;background-color:{{colorArrays[item.color_index%colorArrays.length]}}">
+            <view class="smalltext">{{item.show+'@'+item.location}}</view>
+          </view>
+        </view>
+      </view>
+      <!--<view class="weui-cells__tips">
+        Tips:需要查看其他学期课表请到主页进行切换。
+      </view>-->
+
+      <modal title="课程详情" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="modalChange" bindcancel="modalChange">
+        <view class="weui-flex">
+          <view class="placeholder">课程</view>
+          <view class="weui-flex__item">{{wlist[cur_index].name}}</view>
+        </view>
+         <view class="weui-flex">
+          <view class="placeholder">别名</view>
+          <input type="text" class="weui-flex__item" value="{{wlist[cur_index].show}}" bindchange="updshow" />
+        </view> 
+        <view class="weui-flex">
+          <view class="placeholder">教室</view>
+          <!--<view class="weui-flex__item">{{wlist[cur_index].location}}</view>-->
+          <input type="text" class="weui-flex__item" value="{{wlist[cur_index].location}}" bindchange="updloc"/>
+        </view>
+        <view class="weui-flex">
+          <view class="placeholder">老师</view>
+          <input type="text" class="weui-flex__item" value="{{wlist[cur_index].teacher}}" bindchange="updtea"/>
+          <!-- <view class="weui-flex__item">{{wlist[cur_index].teacher}}</view> -->
+        </view>
+        <view class="weui-flex">
+          <view class="placeholder">周几</view>
+          <view class="weui-flex__item">{{wlist[cur_index].dayInWeek}}</view>
+        </view>
+        <view class="weui-flex">
+          <view class="placeholder">节数</view>
+          <view class="weui-flex__item">{{wlist[cur_index].startSec + '-' + wlist[cur_index].endSec}}</view>
+        </view>
+        <view class="weui-flex">
+          <view class="placeholder">周数</view>
+          <view class="weui-flex__item">{{wlist[cur_index].period}}</view>
+          <!-- <input type="text" class="weui-flex__item" value="{{wlist[cur_index].period}}" bindchange="updper" /> -->
+        </view>
+           <view class="placeholder">Tips：别名、教室、老师可以修改。</view>   
+      </modal>
+    </view>
+  </view>
+</view>
+<view class="popup-example--left zan-popup zan-popup--left {{ showPopup ? 'zan-popup--show' : ''}}">
+  <view class="zan-popup__mask" bindtap="hidePopup"></view>
+  <view class="zan-popup__container">
+    <view class="zan-btns">
+      <button class="zan-btn" catchtap="refreshList">
+        刷新课表
+      </button>
+      <picker bindchange="bindTimeChange" value="{{time_index}}" range="{{time_lists}}" class="picker zan-btn">
+        更换当前学期
+    </picker>
+    </view>
+  </view>
+</view>

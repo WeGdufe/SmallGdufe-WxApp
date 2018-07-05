@@ -1,0 +1,37 @@
+<!--pages/jwxt/score.wxml-->
+<view class="page">
+  <view class="">
+    <view class="weui-flex label-title">
+      <view class="label-75">
+        <view>模块名称</view>
+      </view>
+      <view class="label-20">
+        <view>学分</view>
+      </view>
+    </view>
+  </view>
+  <block class="" wx:for="{{keys}}" wx:for-index="i" wx:key="*this">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input score-title" bindtap="show" id="id_{{i}}">
+        <view class="label-75">{{keys[i]}}</view>
+        <view class="label-20" style="color:{{item.score >= 60 ? '#16ba00' : 'red'}};">{{details[keys[i]].credit}}</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title light" hidden="{{show['id_'+i]}}" style="font-size: 35rpx;">
+    <block class="" wx:for="{{details[keys[i]].lists}}" wx:for-index="j" wx:key="*this">
+      <view class="weui-cell weui-cell_input score-title" bindtap="show" id="id_{{i}}">
+        <view class="label-75">{{item.name}}</view>
+        <view class="label-20" style="color:#16ba00;">{{item.credit}}</view>
+      </view>
+      </block>
+    </view>
+  </block>
+  <view class="weui-cells__tips">
+    <view>备注：</view>
+    <view>1.只计算有成绩并且已经合格的课程，正在上的课课没算进去；</view>
+    <view>2.点击相应的模块可以看学分详情；</view>
+    <view>3.选修通识课-未知模块的因为没收录到，结果仅供参考；</view>
+    <view>4.没有评教的同学无法查询。</view>
+  </view>
+
+</view>

@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main/main",
+    "pages/login/login",
+    "pages/functions/sztz",
+    "pages/functions/emptyclassroom",
+    "pages/main/card",
+    "pages/jwxt/score",
+    "pages/lib/search",
+    "pages/lib/history",
+    "pages/lib/current",
+    "pages/time/open",
+    "pages/jwxt/schedule",
+    "pages/lib/details",
+    "pages/time/class",
+    "pages/query/electric",
+    "pages/jwxt/yjpj",
+    "pages/jwxt/exam",
+    "pages/query/creditdetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小广财",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "课表",
+        "iconPath": "/res/tab_home.png",
+        "selectedIconPath": "/res/tab_home_on.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "主页",
+        "iconPath": "/res/tab_me.png",
+        "selectedIconPath": "/res/tab_me_on.png"
+      }
+    ]
+  }
+}

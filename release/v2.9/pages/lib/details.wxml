@@ -1,0 +1,50 @@
+<!--pages/lib/details.wxml-->
+<view class="page__hd">
+  <!-- <image class="weui-media-box__thumb" src="/images/core/lib.png" /> -->
+  <view class="weui-media-box__title" style="font-size:40rpx;font-weight:bolder;color:#fff;">{{book.name}}</view>
+  <view class="page__desc" style="font-size:30rpx;">{{book.author}}</view>
+  <view class="page__desc" style="color:#f8f8f8;;">{{book.serial}}</view>
+</view>
+<view class="weui-panel" wx:if="{{lists}}">
+  <view class="weui-panel__hd">馆藏信息</view>
+  <view class="weui-panel__bd">
+    <block class="" wx:for="{{lists}}" wx:key="*this">
+        <view bindtap="showDetail" id="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <view class="type" mode="aspectFit">{{index + 1}}</view>
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title"> {{item.serial}}</view>
+            <view class="weui-media-box__desc">
+              <text style="color: {{item.state == '可借' ? 'green' : 'gray'}};">{{item.state}}</text>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">{{item.location}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+  </view>
+</view>
+<!-- <scroll-view class="page">
+  <block class="" wx:for="{{lists}}" wx:key="*this">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="">{{item.serial}}</view>
+      </view>
+    </view>
+    <view class="weui-cells__tips">
+      <view class="weui-flex">
+        书刊状态：
+        <view style="color:{{item.state == '可借' ? '#16ba00' : ''}};">{{item.state}}</view>
+      </view>
+
+      <view class="weui-flex">
+        馆藏位置：{{item.location}}
+      </view>
+      <view class="weui-flex">
+        条形码：{{item.barId}}
+      </view>
+    </view>
+  </block>
+</scroll-view> -->

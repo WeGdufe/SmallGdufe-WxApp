@@ -1,0 +1,122 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.6.6",
+	"appid": "wxa17cc2b7e7a6e406",
+	"projectname": "%E5%B0%8F%E5%B9%BF%E8%B4%A2-git",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": [
+				{
+					"name": "test",
+					"pathName": "",
+					"title": "",
+					"cacheKey": ""
+				}
+			]
+		},
+		"conversation": {
+			"current": 0,
+			"list": [
+				{
+					"name": "test",
+					"query": "",
+					"boxQI": "",
+					"service": {}
+				}
+			]
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "评教",
+					"pathName": "pages/jwxt/yjpj",
+					"query": "",
+					"scene": "1048"
+				},
+				{
+					"id": 1,
+					"name": "电控",
+					"pathName": "pages/jwxt/schedule",
+					"query": "",
+					"scene": "1048"
+				},
+				{
+					"id": 2,
+					"name": "学分",
+					"pathName": "pages/query/creditdetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "考试",
+					"pathName": "pages/jwxt/exam",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "main",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": "1048"
+				},
+				{
+					"id": 5,
+					"name": "群进入",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "YbQySUzj2h_Fx_-cAYI91kYsvknkLXkFaK_MKDUz1H8@cr4dev",
+						"shareKey": "Mm3OeRcPiM8tPucsnCgaR5bfGnkFrIGnnxEbJ29PF-KBYjmXNWyOJd6RUHqr_ju7MSXGGS1YDVRe7ONBR__CmQ~~"
+					}
+				},
+				{
+					"id": -1,
+					"name": "成绩",
+					"pathName": "pages/jwxt/score",
+					"query": "",
+					"scene": "1044",
+					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "YbQySUzj2h_Fx_-cAYI91kYsvknkLXkFaK_MKDUz1H8@cr4dev",
+						"shareKey": "Mm3OeRcPiM8tPucsnCgaR5bfGnkFrIGnnxEbJ29PF-KBYjmXNWyOJd6RUHqr_ju7MSXGGS1YDVRe7ONBR__CmQ~~"
+					}
+				},
+				{
+					"id": 7,
+					"name": "图书",
+					"pathName": "pages/lib/search",
+					"query": "",
+					"scene": "1048"
+				},
+				{
+					"id": -1,
+					"name": "emptyClassroom",
+					"pathName": "pages/functions/emptyclassroom",
+					"query": "",
+					"scene": "1048"
+				}
+			]
+		}
+	}
+}

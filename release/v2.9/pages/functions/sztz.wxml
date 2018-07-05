@@ -1,0 +1,26 @@
+<!--pages/functions/sztz.wxml-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">素拓模块</view>
+    <view class="th">所需最少学分</view>
+    <view class="th ">已修学分</view>
+  </view>
+  <block wx:for="{{lists}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}" style='color: {{item.score >= item.requireScore ? "green" : "red"}}'>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.requireScore}}</view>
+      <view class="td">{{item.score}}</view>
+    </view>
+    <view class="tr" style='color: {{item.score >= item.requireScore ? "#16ba00" : "red"}}' wx:else>
+      <view class="td">{{item.name}}</view>
+      <view class="td">{{item.requireScore}}</view>
+      <view class="td">{{item.score}}</view>
+    </view>
+  </block>
+</view>
+<view class="weui-cells__tips">
+    <view>备注：</view>
+    <view>1.绿色为该模块分数已修够；</view>
+    <view>2.任选模块可以忽略；</view>
+    <view>3.信息来源信息门户，可能与素拓系统不同步，会有延迟。</view>
+  </view>

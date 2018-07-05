@@ -1,0 +1,29 @@
+<!--pages/lib/current.wxml-->
+<view class="weui-panel">
+  <view class='weui-panel__hd'>当前借阅[{{booksInfo.length}}]</view>
+  <view class='weui-panel__bd'>
+    <block class="" wx:for="{{booksInfo}}" wx:key="*this">
+      <view id="{{index}}" class="weui-media-box weui-media_text" >
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__title"> {{(index+1) + '.' + item.name + '/' + item.author}}</view>
+          <view class="weui-media-box__desc">借书日期： {{item.borrowedTime}}</view>
+          <view class="weui-media-box__desc">应还日期： {{item.returnTime}}</view>
+          <view class="weui-media-box__desc">馆藏地点： {{item.location}}</view>
+          <view class="weui-media-box__desc">续借次数： {{item.renewTimes}}</view>
+        </view>
+      </view>
+      <view class="button-sp-area">
+        <button id="{{index}}" bindtap='selectBook' class="weui-btn weui-btn_primay" type="primary">续借</button>
+      </view>
+    </block>
+  </view>
+</view>
+<modal title="续借图书" confirm-text="续借" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="renew" bindcancel="renew">
+    <view class="weui-flex">
+      <image bindtap='verify' src='data:image/png;base64,{{verify_code}}' mode="aspectFit" style='height:100px;'></image>
+    </view>
+    <view class="placeholder">Tips：点击图片可以刷新验证码。</view> 
+    <view class="weui-flex">
+    输入验证码：<input type="text" class="weui-flex__item" value="{{inputCode}}" bindchange="updCode"/>
+    </view>
+</modal>

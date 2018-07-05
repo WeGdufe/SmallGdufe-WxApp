@@ -1,0 +1,62 @@
+<view class="page">
+  <form bindsubmit='formSubmit' report-submit="true">
+    <view class="weui-cells  weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="name_radius">{{baseInfo.name[0]}}</view>
+        <view class="flex weui-cell__bd">
+          <view class="weui-flex__item">
+            <view class="weui-cell" style="padding:5px;">
+              <view class="weui-cell__bd">{{baseInfo.name}}</view>
+              <button class="weui-cell__ft" form-type='submit' data-action='navigate' data-url='/pages/main/card'>饭卡余额</button>
+            </view>
+          </view>
+          <view class="weui-flex__item">
+            <view class="weui-cell" style="padding:5px;">
+              <view class="weui-cell__bd">{{baseInfo.classroom}}</view>
+              <button class="weui-cell__ft" style="color: {{!!cardInfo.cash ? 'green' : 'red'}}" form-type='submit' data-action='navigate' data-url='/pages/main/card'>{{!!cardInfo.cash ? '￥' + cardInfo.cash : '查询中'}}</button>
+              <!-- <view class="weui-cell__ft">{{baseInfo.classroom}}</view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">功能</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-grids">
+        <block wx:for="{{grids}}" wx:for-item='grid' wx:key="*this">
+          <button data-url="{{grid.url}}" class="weui-grid" hover-class="weui-grid_active" data-action='navigate' form-type='submit'>
+            <image class="weui-grid__icon" src="{{grid.iconPath}}" />
+            <view class="weui-grid__label">{{grid.text}}</view>
+          </button>
+        </block>
+        <navigator url="/pages/query/electric" class="weui-grid" hover-class="weui-grid_active" hidden='{{!baseInfo.electric}}'>
+          <image class="weui-grid__icon" src="/res/icon_electric_on.png" />
+          <view class="weui-grid__label">电控查询</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="weui-cells__title">更多</view>
+    <view class="weui-cells icon_list weui-cells_after-title">
+      <button class="icon_item_demo" open-type='contact'>
+        <view class="icon icon--message" style="font-size:50rpx; color:'#333333'"></view>
+        <text class="icon_type">反馈</text>
+      </button>
+      <button class="icon_item_demo" bindtap='logout'>
+        <view class="icon icon--no" style="font-size:50rpx; color:'#333333'"></view>
+        <text class="icon_type">注销</text>
+      </button>
+    </view>
+  </form>
+  <view class='weui-cells' hidden='{{notice.ad}}'>
+    <ad unit-id="adunit-a14b0be17436d8c7"></ad>
+  </view>
+</view>
+<modal title="{{notice.title}}" confirm-text="{{notice.confirmText}}" cancel-text="{{notice.cancelText}}" hidden="{{modalHidden}}" bindconfirm="showNotice" bindcancel="showNotice">
+  <block wx:for="{{notice.keys}}" wx:key="*this">
+    <view class="weui-flex">
+      <view class="placeholder">{{notice.keys[index]}}</view>
+      <view class="weui-flex__item">{{notice.values[index]}}</view>
+    </view>
+    <view class="placeholder">{{notice.tips}}</view>
+  </block>
+</modal>
